@@ -1,0 +1,33 @@
+import { useState } from 'react'
+
+export default function Navbar() {
+  const [sidebar, setSidebar] = useState(false)
+    const showsidebar = () => {
+      setSidebar(!sidebar)
+      console.log(sidebar)
+    }
+
+  return (
+    <nav class="navbar">
+      <div class="brand-title">Brand Name</div>
+      <a href="#" class="toggle-button" onClick={showsidebar()}>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class={sidebar ? 'navbar-links active' : 'navbar-links'}>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  )
+}
