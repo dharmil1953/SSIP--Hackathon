@@ -3,13 +3,13 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import language, {
   ChangeLangaugetoEnglish,
   ChangeLangaugetoGujarati,
-} from "./reducers/language";
-import logo1 from "./images/logo1.png";
-import logo2 from "./images/logo2.jpg";
-import logo3 from "./images/n.gif";
+} from "../reducers/language";
+import logo1 from "../images/logo1.png";
+import logo2 from "../images/logo2.jpg";
+import logo3 from "../images/n.gif";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function Navbar() {
+export default function NavbarGuj() {
   const [sidebar, setSidebar] = useState(false);
   const dispatch = useDispatch();
   const lang = useSelector((state) => state.language);
@@ -26,7 +26,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* {console.log(`hii ${lang}`)} */}
       <nav className="navbar">
         <div className="brand-title">
           <Link to="/">
@@ -53,10 +52,10 @@ export default function Navbar() {
 
         <div className={sidebar ? "navbar-links active" : "navbar-links"}>
           <ul>
-            <CustomLink to={"/"}>Home</CustomLink>
-            <CustomLink to={"/schemes"}>Schemes</CustomLink>
-            <CustomLink to={"/About"}>About</CustomLink>
-            <CustomLink to={"/Contact"}>Contact</CustomLink>
+            <CustomLink to={"/"}>ઘર</CustomLink>
+            <CustomLink to={"/schemes"}>યોજનાઓ</CustomLink>
+            <CustomLink to={"/About"}>વિશે</CustomLink>
+            <CustomLink to={"/Contact"}>સંપર્ક કરો</CustomLink>
 
             <li
               className="language"
@@ -64,15 +63,14 @@ export default function Navbar() {
                 changelang();
               }}
             >
-              change language to {lang == "en" ? "Gujarati" : "English"}
+              ભાષા બદલો {lang == "en" ? "Gujarati" : "English"}
             </li>
           </ul>
         </div>
       </nav>
 
       <marquee className="marque">
-        <img src={logo3}></img>
-        <p> Some news information</p>
+        <p> Some news information </p>
       </marquee>
     </>
   );

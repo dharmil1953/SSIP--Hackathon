@@ -44,12 +44,12 @@
 
 .navbar-links li:hover {
   /* background: linear-gradient(5deg, orange, white, #008000); */
-border-radius: 10px;
+  border-radius: 10px;
   background-color: rgb(255, 255, 255);
 }
 .navbar li.active {
   background: linear-gradient(5deg, orange, white, #008000);
-border-radius: 10px;
+  border-radius: 10px;
 }
 
 .toggle-button {
@@ -106,8 +106,33 @@ border-radius: 10px;
 .marque {
   background-color: green;
   height: 2.5rem;
+  z-index: 1;
 }
 .marque p {
   height: 2.5rem;
-  margin-top:0.75rem;
+  margin-top: -1.76rem;
+  margin-left:3rem;
+  z-index: 2;
+}
+
+.marque img {
+  margin-top: 5px;
+
+  height: 30px;
+  width: 50px;
+}
+
+.language {
+  padding-top: 1rem;
+  color: black;
+
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.language:hover {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
 }
