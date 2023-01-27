@@ -22,7 +22,7 @@ function App() {
             <Route path="/" element={[<Navbar />, <Home />]} />
             <Route path="/Schemes" element={[<Navbar />, <Schemes />]} />
             <Route path="/About" element={[<Navbar />, <About />]} />
-            en <Route path="/Contact" element={[<Navbar />, <Contact />]} />
+            <Route path="/Contact" element={[<Navbar />, <Contact />]} />
           </Routes>
         </div>
       ) : (
