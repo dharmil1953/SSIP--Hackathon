@@ -3,7 +3,7 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import language, {
   ChangeLangaugetoEnglish,
   ChangeLangaugetoGujarati,
-} from "./reducers/language";
+} from "./reducers/Texttospeech";
 import logo1 from "./images/logo1.png";
 import logo2 from "./images/logo2.jpg";
 import logo3 from "./images/n.gif";

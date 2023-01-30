@@ -15,20 +15,19 @@ function App() {
 
   return (
     <>
-      {console.log("hii")}
       {lang === "en" ? (
         <div className="container">
           <Routes>
             <Route path="/" element={[<Navbar />, <Home />]} />
             <Route path="/Schemes" element={[<Navbar />, <Schemes />]} />
             <Route path="/About" element={[<Navbar />, <About />]} />
-            en <Route path="/Contact" element={[<Navbar />, <Contact />]} />
+            <Route path="/Contact" element={[<Navbar />, <Contact />]} />
           </Routes>
         </div>
       ) : (
         <div className="container">
           <Routes>
-            <Route path="/" element={[<NavbarGuj />, <HomeGuj  />]} />
+            <Route path="/" element={[<NavbarGuj />, <HomeGuj />]} />
             <Route path="/Schemes" element={[<NavbarGuj />, <SchemesGuj />]} />
             <Route path="/About" element={[<NavbarGuj />, <AboutGuj />]} />
             <Route path="/Contact" element={[<NavbarGuj />, <ContactGuj />]} />

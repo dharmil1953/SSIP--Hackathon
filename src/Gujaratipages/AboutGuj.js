@@ -1,5 +1,12 @@
 import React from "react";
-
+import { useDispatch } from "react-redux";
+import { speak } from "../reducers/Texttospeech";
 export default function AboutGuj() {
-  return <h2>about guajrati</h2>;
+  const dispatch = useDispatch();
+  return (
+    <>
+      <h2>about guajrati</h2>
+      <button onClick={()=>dispatch(speak())}>tap</button>
+    </>
+  );
 }
