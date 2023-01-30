@@ -21,7 +21,6 @@ export default function Navbar() {
     lang == "en"
       ? dispatch(ChangeLangaugetoGujarati())
       : dispatch(ChangeLangaugetoEnglish());
-    console.log(lang);
   };
 
   return (

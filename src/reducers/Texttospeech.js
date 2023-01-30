@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const Texttospeech = createSlice({
   name: "textToSpeech",
   initialState: {
-    text: " Our FREE online Gujarati typing software uses Google transliteration typing service. It provides fast and accurate typing - making it easy to type the Gujarati language anywhere on the Web.",
+    text: "",
     synth: window.speechSynthesis,
     utterance: null,
     isPlaying: false,
@@ -28,15 +28,15 @@ const Texttospeech = createSlice({
     //   state.selectedVoice = ;
     // },
     speak: (state) => {
-      console.log("hi");
-
       if (state.utterance) {
         state.synth.cancel();
       }
       const utterance = new SpeechSynthesisUtterance(state.text);
       const a = state.synth.getVoices();
       utterance.voice = a[12];
-      console.log(utterance.voice);
+
+      console.log(state.text);
+
       state.synth.speak(utterance);
       state.utterance = utterance;
       state.isPlaying = true;
@@ -45,6 +45,7 @@ const Texttospeech = createSlice({
       state.synth.pause();
       state.isPlaying = false;
     },
+
     resume: (state) => {
       state.synth.resume();
       state.isPlaying = true;
