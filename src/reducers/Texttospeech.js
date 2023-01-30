@@ -1,5 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { useDispatch } from "react-redux";
 
+function myTimer() {
+  window.speechSynthesis.pause();
+  window.speechSynthesis.resume();
+  myTimeout = setTimeout(myTimer, 10000);
+}
+
+var myTimeout;
 const Texttospeech = createSlice({
   name: "textToSpeech",
   initialState: {
@@ -20,29 +28,28 @@ const Texttospeech = createSlice({
     setText: (state, action) => {
       state.text = action.payload;
     },
-    // setVoices: (state, action) => {
-    //   state.voices = action.payload;
-    //   state.selectedVoice = action.payload[12];
-    // },
-    // setSelectedVoice: (state, action) => {
-    //   state.selectedVoice = ;
-    // },
+
     speak: (state) => {
+      console.log("speaking");
       if (state.utterance) {
         state.synth.cancel();
       }
       const utterance = new SpeechSynthesisUtterance(state.text);
       const a = state.synth.getVoices();
+      // utterance.lang = "gu-IN";
+      console.log(utterance);
       utterance.voice = a[12];
 
-      console.log(state.text);
-
       state.synth.speak(utterance);
+      myTimeout = setTimeout(myTimer, 10000);
       state.utterance = utterance;
+
       state.isPlaying = true;
     },
     pause: (state) => {
       state.synth.pause();
+      clearTimeout(myTimeout);
+      console.log(state.utterance);
       state.isPlaying = false;
     },
 

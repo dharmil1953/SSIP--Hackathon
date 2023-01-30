@@ -1,0 +1,77 @@
+import { createSlice } from "@reduxjs/toolkit";
+import { useDispatch } from "react-redux";
+
+var myTimeout;
+function myTimer() {
+  console.log("inside the timer");
+  window.speechSynthesis.pause();
+  window.speechSynthesis.resume();
+}
+
+// const Timer = setInterval(() => {
+//   console.log("Hello, World!");
+// }, 1000);
+
+// Stop the interval
+// clearInterval(intervalId);
+
+const TextToSpeechSlice = createSlice({
+  name: "textToSpeech",
+  initialState: {
+    text: "મિત્રો અહી આપના માટે ગુજરાતી સાહિત્યની શ્રેષ્ઠ 101 વાર્તાઓ નો સંગ્રહ મુકી રહ્યા છીએ. 101 best Gujarati stories collection, શ્રેષ્ઠ ગુજરાતી વાર્તાઓ pdf, gujarati varta pdf, પ્રેરણાદાયી ટૂંકી વાર્તા pdf, ગુજરાતી વાર્તા pdf, હિતોપદેશની વાર્તાઓ pdf, મહેનત વાર્તા pdf, શ્રેષ્ઠ પ્રેરક કથા, બોધ વાર્તા pdf, ગુજરાતી બોધ વાર્તા pdf, ગુજરાતી સાહિત્ય વાર્તા, પ્રેરણાદાયી ટૂંકી વાર્તા, ગુજરાતી વાર્તા સંગ્રહ, વાર્તા gujarati pdf, varta gujarati pdf, ગુજરાતી પ્રેરક વાર્તા pdf, નવી વાર્તા pdf, વાર્તા ગુજરાતી સાહિત્ય, બોધ વાર્તા ગુજરાતી, ગુજરાતી વાર્તાઓનો ખજાનો, ધૂમકેતુ, પન્નાલાલ પટેલ, ઝવેરચંદ મેઘાણી અને અન્ય લેખકોની શ્રેષ્ઠ વાર્તાઓ, Story books in Gujarati pdf, gujarati books to read online free, આ સિવાય જનરલ નોલેજ, બાળ ગીત, બાળવાર્તાઓ, જુની નવી કવિતાઓ, જોડકણા, ઉખાણા નિયમીત મુકવામાં આવે છે.",
+    // text: "English is a West Germanic language in the Indo-European language family, with its earliest forms spoken by the inhabitants of early medieval England.[3][4][5] It is named after the Angles, one of the ancient Germanic peoples that migrated to the island of Great Britain. Existing on a dialect continuum with Scots, and then most closely related to the Low German and Frisian languages, English is genealogically Germanic. However, its vocabulary also shows major influences from French (about 28% of Modern English words) and Latin (also .",
+    selectedVoice: null,
+    synth: window.speechSynthesis,
+
+    utterance: null,
+    isPlaying: false,
+  },
+  reducers: {
+    setText: (state, action) => {
+      state.text = action.payload;
+    },
+
+    speak: (state) => {
+      if (state.utterance) {
+        state.synth.cancel();
+      }
+      // console.log(state.synth);
+      const utterance = new SpeechSynthesisUtterance(state.text);
+
+      // console.log(utterance);
+
+      setInterval(myTimer(), 1000);
+      const a = speechSynthesis.getVoices();
+      utterance.voice = a[12];
+      state.synth.speak(utterance);
+      state.utterance = utterance;
+
+      utterance.onerror = (e) => {
+        console.log(e.error);
+      };
+      utterance.onend = () => {
+        console.log("on end");
+        clearInterval(myTimeout);
+      };
+
+      state.isPlaying = true;
+      console.log("hi");
+    },
+    pause: (state) => {
+      clearInterval(myTimeout);
+      state.synth.pause();
+      console.log("removing timeout");
+
+      state.isPlaying = false;
+    },
+    resume: (state) => {
+      state.synth.resume();
+      console.log("add timeout");
+      myTimer();
+      state.isPlaying = true;
+    },
+  },
+});
+
+export const { setText, speak, pause, resume } = TextToSpeechSlice.actions;
+export default TextToSpeechSlice.reducer;
