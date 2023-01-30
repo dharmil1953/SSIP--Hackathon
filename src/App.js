@@ -15,7 +15,6 @@ function App() {
 
   return (
     <>
-      {console.log("hii")}
       {lang === "en" ? (
         <div className="container">
           <Routes>
@@ -28,7 +27,7 @@ function App() {
       ) : (
         <div className="container">
           <Routes>
-            <Route path="/" element={[<NavbarGuj />, <HomeGuj  />]} />
+            <Route path="/" element={[<NavbarGuj />, <HomeGuj />]} />
             <Route path="/Schemes" element={[<NavbarGuj />, <SchemesGuj />]} />
             <Route path="/About" element={[<NavbarGuj />, <AboutGuj />]} />
             <Route path="/Contact" element={[<NavbarGuj />, <ContactGuj />]} />
