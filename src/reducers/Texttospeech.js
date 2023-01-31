@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 
-// function myTimer() {
-//   window.speechSynthesis.pause();
-//   window.speechSynthesis.resume();
-//   myTimeout = setTimeout(myTimer, 10000);
-// }
+function myTimer() {
+  console.log("inside timer");
+  window.speechSynthesis.pause();
+  window.speechSynthesis.resume();
+  myTimeout = setTimeout(myTimer, 10000);
+}
 
 var myTimeout;
 const Texttospeech = createSlice({
@@ -15,7 +16,8 @@ const Texttospeech = createSlice({
     synth: window.speechSynthesis,
     utterance: null,
     isPlaying: false,
-    // const [voice, setVoice] = useState(null)
+    started: false,
+    attempt: 0,
   },
   reducers: {
     ChangeLangaugetoEnglish: (state, action) => {
@@ -30,21 +32,27 @@ const Texttospeech = createSlice({
     },
 
     speak: (state) => {
-      console.log("speaking");
       if (state.utterance) {
+        console.log("inside if condition");
         state.synth.cancel();
       }
       const utterance = new SpeechSynthesisUtterance(state.text);
       const a = state.synth.getVoices();
       // utterance.lang = "gu-IN";
-      console.log(utterance);
       utterance.voice = a[12];
 
       state.synth.speak(utterance);
-      // myTimeout = setTimeout(myTimer, 10000);
+      console.log("speaking");
+      myTimeout = setTimeout(myTimer, 10000);
       state.utterance = utterance;
 
+      console.log("started" + state.started);
       state.isPlaying = true;
+      if (state.attempt == 1) {
+        state.started = true;
+      }
+      state.attempt = state.attempt + 1;
+      console.log(state.attempt);
     },
     pause: (state) => {
       state.synth.pause();

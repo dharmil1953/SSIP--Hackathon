@@ -16,11 +16,11 @@ export default function AboutGuj() {
   //   myTimeout = setTimeout(myTimer, 10000);
   // }
 
-  const handlePlay = () => {
-    dispatch(speak());
-    console.log("inside handle play");
-    // Timer();
-  };
+  // const handlePlay = () => {
+  //   dispatch(speak());
+  //   console.log("inside handle play");
+  //   // Timer();
+  // };
 
   useEffect(() => {
     // console.log("inside use effect");
@@ -49,7 +49,7 @@ export default function AboutGuj() {
 
       <p ref={data1}>dfafsdafdf</p>
       {/* <button onClick={() => dispatch(speak())}>tap</button> */}
-      <button
+      {/* <button
         onClick={() => {
           handlePlay();
         }}
@@ -57,7 +57,7 @@ export default function AboutGuj() {
         tap
       </button>
       <button onClick={() => dispatch(pause())}>pause</button>
-      <button onClick={() => dispatch(resume())}>resume</button>
+      <button onClick={() => dispatch(resume())}>resume</button> */}
     </>
   );
 }

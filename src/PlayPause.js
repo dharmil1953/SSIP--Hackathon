@@ -5,6 +5,7 @@ import { pause, resume, speak } from "./reducers/Texttospeech";
 
 export default function PlayPause() {
   var isPlaying = useSelector((state) => state.isPlaying);
+  var started = useSelector((state) => state.started);
   const dispatch = useDispatch();
 
   return (
@@ -16,7 +17,15 @@ export default function PlayPause() {
             ? "play-pause-button paused playing "
             : "play-pause-button paused "
         }
-        onClick={() => (isPlaying ? dispatch(pause()) : dispatch(speak()))}
+        // onClick={() => (isPlaying ? dispatch(pause()) : dispatch(speak()))}
+        onClick={() =>
+          isPlaying
+            ? dispatch(pause())
+            : started
+            ? dispatch(resume())
+            : dispatch(speak())
+        }
+     
       >
         <i>P</i>
         <i>l</i>
