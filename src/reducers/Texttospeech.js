@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 
-function myTimer() {
-  window.speechSynthesis.pause();
-  window.speechSynthesis.resume();
-  myTimeout = setTimeout(myTimer, 10000);
-}
+// function myTimer() {
+//   window.speechSynthesis.pause();
+//   window.speechSynthesis.resume();
+//   myTimeout = setTimeout(myTimer, 10000);
+// }
 
 var myTimeout;
 const Texttospeech = createSlice({
@@ -41,7 +41,7 @@ const Texttospeech = createSlice({
       utterance.voice = a[12];
 
       state.synth.speak(utterance);
-      myTimeout = setTimeout(myTimer, 10000);
+      // myTimeout = setTimeout(myTimer, 10000);
       state.utterance = utterance;
 
       state.isPlaying = true;

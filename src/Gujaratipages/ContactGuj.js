@@ -17,8 +17,8 @@ export default function ContactGuj() {
   }, []);
   return (
     <>
-      <h2>contact gujarati</h2>;<p ref={data}>hello from contact</p>
-      <button onClick={() => dispatch(speak())}>tap</button>
+      <h2>contact gujarati</h2>
+      <p ref={data}>hello from contact</p>
     </>
   );
 }

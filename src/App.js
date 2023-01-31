@@ -10,6 +10,7 @@ import SchemesGuj from "./Gujaratipages/SchemesGuj";
 import AboutGuj from "./Gujaratipages/AboutGuj";
 import ContactGuj from "./Gujaratipages/ContactGuj";
 import NavbarGuj from "./Gujaratipages/NavbarGuj";
+import PlayPause from "./PlayPause";
 function App() {
   const lang = useSelector((state) => state.language);
 

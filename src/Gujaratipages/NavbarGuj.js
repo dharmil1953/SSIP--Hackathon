@@ -8,6 +8,7 @@ import logo1 from "../images/logo1.png";
 import logo2 from "../images/logo2.jpg";
 import logo3 from "../images/n.gif";
 import { useDispatch, useSelector } from "react-redux";
+import PlayPause from "../PlayPause";
 
 export default function NavbarGuj() {
   const [sidebar, setSidebar] = useState(false);
@@ -69,6 +70,7 @@ export default function NavbarGuj() {
         </div>
       </nav>
 
+      <PlayPause />
       <marquee className="marque">
         <img src={logo3}></img>
         <p> Some news information </p>
