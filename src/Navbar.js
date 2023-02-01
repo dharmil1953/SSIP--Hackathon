@@ -70,7 +70,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-        <PlayPause/>
+      <PlayPause />
       <marquee className="marque">
         <img src={logo3}></img>
         <p> Some news information</p>

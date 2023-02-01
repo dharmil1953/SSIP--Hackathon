@@ -22,7 +22,7 @@ export default function NavbarGuj() {
     lang == "en"
       ? dispatch(ChangeLangaugetoGujarati())
       : dispatch(ChangeLangaugetoEnglish());
-    console.log(lang);
+    // console.log(lang);
   };
 
   return (
