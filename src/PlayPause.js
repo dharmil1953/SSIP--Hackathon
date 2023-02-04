@@ -10,7 +10,7 @@ export default function PlayPause() {
 
   return (
     <div>
-      {console.log(isPlaying)}
+      {/* {console.log(isPlaying)} */}
       <button
         className={
           isPlaying
