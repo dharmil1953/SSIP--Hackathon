@@ -37,6 +37,7 @@
 
 .navbar-links li a {
   display: block;
+
   text-decoration: none;
   color: rgb(0, 0, 0);
   padding: 1rem;
@@ -95,6 +96,7 @@
   }
 
   .navbar-links ul li a {
+    color: black;
     padding: 0.5rem 1rem;
   }
 
@@ -111,7 +113,7 @@
 .marque p {
   height: 2.5rem;
   margin-top: -1.76rem;
-  margin-left:3rem;
+  margin-left: 3rem;
   z-index: 2;
 }
 

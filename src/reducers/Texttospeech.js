@@ -40,6 +40,7 @@ const Texttospeech = createSlice({
       const a = state.synth.getVoices();
       // utterance.lang = "gu-IN";
       utterance.voice = a[12];
+      utterance.rate = 0.90;
 
       state.synth.speak(utterance);
       console.log("speaking");
