@@ -21,7 +21,7 @@ function App() {
       {lang === "en" ? (
         <div className="container">
           <Routes>
-            <Route path="/" element={[<Navbar />, <Home />, <NavbarTwo />]} />
+            <Route path="/" element={[<Navbar />, <Home />]} />
             <Route path="/Schemes" element={[<Navbar />, <Schemes />]} />
             <Route path="/About" element={[<Navbar />, <About />]} />
             <Route path="/Contact" element={[<Navbar />, <Contact />]} />
@@ -30,10 +30,7 @@ function App() {
       ) : (
         <div className="container">
           <Routes>
-            <Route
-              path="/"
-              element={[<NavbarGuj />, <HomeGuj />, <NavbarGujTwo />]}
-            />
+            <Route path="/" element={[<NavbarGuj />, <HomeGuj />]} />
             <Route path="/Schemes" element={[<NavbarGuj />, <SchemesGuj />]} />
             <Route path="/About" element={[<NavbarGuj />, <AboutGuj />]} />
             <Route path="/Contact" element={[<NavbarGuj />, <ContactGuj />]} />
