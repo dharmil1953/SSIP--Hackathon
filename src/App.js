@@ -13,6 +13,7 @@ import NavbarGuj from "./Gujaratipages/NavbarGuj";
 import PlayPause from "./PlayPause";
 import NavbarTwo from "./NavbarTwo";
 import NavbarGujTwo from "./NavbarGujTwo";
+import Test from "./Test";
 function App() {
   const lang = useSelector((state) => state.language);
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="/Schemes" element={[<Navbar />, <Schemes />]} />
             <Route path="/About" element={[<Navbar />, <About />]} />
             <Route path="/Contact" element={[<Navbar />, <Contact />]} />
+            <Route path="/test" element={[<Test />]} />
           </Routes>
         </div>
       ) : (
@@ -34,6 +36,7 @@ function App() {
             <Route path="/Schemes" element={[<NavbarGuj />, <SchemesGuj />]} />
             <Route path="/About" element={[<NavbarGuj />, <AboutGuj />]} />
             <Route path="/Contact" element={[<NavbarGuj />, <ContactGuj />]} />
+            <Route path="/test" element={[<Test />]} />
           </Routes>
         </div>
       )}
