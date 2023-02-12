@@ -18,8 +18,25 @@ const Texttospeech = createSlice({
     isPlaying: false,
     started: false,
     attempt: 0,
+    isLoggedin: false,
+    language: "en",
+    role: "user",
   },
   reducers: {
+    role: (state, action) => {
+      state.role = action.payload;
+    },
+    login: (state, action) => {
+      console.log("inside reducer");
+      state.isLoggedin = true;
+    },
+    logout: (state, action) => {
+      state.isLoggedin = false;
+      state.role = "user";
+      window.location.reload();
+    },
+    
+
     ChangeLangaugetoEnglish: (state, action) => {
       state.language = "en";
     },
@@ -40,7 +57,7 @@ const Texttospeech = createSlice({
       const a = state.synth.getVoices();
       // utterance.lang = "gu-IN";
       utterance.voice = a[12];
-      utterance.rate = 0.90;
+      utterance.rate = 0.9;
 
       state.synth.speak(utterance);
       console.log("speaking");
@@ -76,5 +93,8 @@ export const {
   resume,
   ChangeLangaugetoGujarati,
   ChangeLangaugetoEnglish,
+  login,
+  logout,
+  role,
 } = Texttospeech.actions;
 export default Texttospeech.reducer;

@@ -31,7 +31,7 @@ body {
   height: 200px;
   width: 100%;
   padding: 40px;
-  background: linear-gradient(to right bottom, #2999f5, #1859d1);
+  background: linear-gradient(to bottom,orange, white);
 }
 
 .uppers h3 svg {

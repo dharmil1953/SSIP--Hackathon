@@ -18,6 +18,7 @@
   position: fixed;
   backface-visibility: hidden;
   z-index: 99;
+  opacity: 0.90;
   // -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
   transform: translateY(var(--y, 0)) translateZ(0);

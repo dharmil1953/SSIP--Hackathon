@@ -3,6 +3,8 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import language, {
   ChangeLangaugetoEnglish,
   ChangeLangaugetoGujarati,
+  login,
+  logout,
 } from "../reducers/Texttospeech";
 import logo1 from "../images/logo1.png";
 import logo2 from "../images/logo2.jpg";
@@ -13,6 +15,8 @@ import PlayPause from "../PlayPause";
 export default function NavbarGuj() {
   const [sidebar, setSidebar] = useState(false);
   const dispatch = useDispatch();
+  const isLoggedin = useSelector((state) => state.isLoggedin);
+
   const lang = useSelector((state) => state.language);
 
   // useEffect(() => {
@@ -25,8 +29,13 @@ export default function NavbarGuj() {
     // console.log(lang);
   };
 
+    const changelogin = () => {
+      isLoggedin == true ? dispatch(logout()) : dispatch(login());
+    };
+
   return (
     <>
+    {console.log(lang)}
       <nav className="navbar">
         <div className="brand-title">
           <Link to="/">
@@ -56,7 +65,10 @@ export default function NavbarGuj() {
             <CustomLink to={"/"}>ઘર</CustomLink>
             <CustomLink to={"/schemes"}>યોજનાઓ</CustomLink>
             <CustomLink to={"/About"}>વિશે</CustomLink>
-            <CustomLink to={"/Contact"}>સંપર્ક કરો</CustomLink>
+            {/* <CustomLink to={"/Contact"}>સંપર્ક કરો</CustomLink> */}
+            <CustomLink to={"/Login"}>
+              {isLoggedin ? "logout Guj" : "login Guj"}
+            </CustomLink>
 
             <li
               className="language"
@@ -64,7 +76,7 @@ export default function NavbarGuj() {
                 changelang();
               }}
             >
-              ભાષા બદલો {lang == "en" ? "Gujarati" : "English"}
+              {lang == "en" ? "Gujara ti" : "English"}
             </li>
           </ul>
         </div>

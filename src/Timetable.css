@@ -1,0 +1,27 @@
+  
+table {
+  border: 2px solid forestgreen;
+  width: 800px;
+  height: 200px;
+}
+
+.ws {
+  align-items: center;
+  margin-left:50px;
+}
+
+.green {
+  background-color: #98fb98;
+}
+
+.red {
+  background-color: #cd5c5c;
+}
+  
+th, tr, td {
+  border-bottom: 1px solid black;
+}
+  
+td {
+  text-align: center;
+}

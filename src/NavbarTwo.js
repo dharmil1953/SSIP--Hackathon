@@ -27,7 +27,7 @@ export default function NavbarTwo() {
   return (
     <>
       {/* {console.log(`hii ${lang}`)} */}
-      <nav className="navbar" style={{ height: "110px" }}>
+      <nav className="navbar" style={{ height: "95px" }}>
         <div className="brand-title">
           <h1 style={{ color: "black", fontStyle: "bold", fontSize: "35px" }}>
             SmartVillage
@@ -45,12 +45,19 @@ export default function NavbarTwo() {
         </Link>
 
         <div className={sidebar ? "navbar-links active" : "navbar-links"}>
-          <ul style={{ color: "black", fontStyle: "bold", fontSize: "20px",marginTop:"25px"}}>
-            <CustomLink to={"/Grievance"}>Grievance</CustomLink>
+          <ul
+            style={{
+              color: "black",
+              fontStyle: "bold",
+              fontSize: "18px",
+              marginTop: "25px",
+            }}
+          >
+            <CustomLink to={"/Grevience"}>Grievance</CustomLink>
             <CustomLink to={"/watersupply"}>Water Supply</CustomLink>
-            <CustomLink to={"/education"}>Education</CustomLink>
-            <CustomLink to={"/election"}>Election</CustomLink>
-            <CustomLink to={"/important dates"}>Important dates</CustomLink>
+            <CustomLink to={"/education"}>Village Tales</CustomLink>
+            {/* <CustomLink to={"/election"}>Election</CustomLink> */}
+            {/* <CustomLink to={"/important dates"}>Important dates</CustomLink> */}
           </ul>
         </div>
       </nav>

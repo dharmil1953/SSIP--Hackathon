@@ -1,0 +1,16 @@
+h3 {
+  text-align: left;
+}
+* {
+  text-align: justify;
+  padding: 6.5px;
+}
+table,th,td {
+  border: solid 1px black;
+}
+.images {
+  border:none;
+}
+.row {
+  border: none;
+}

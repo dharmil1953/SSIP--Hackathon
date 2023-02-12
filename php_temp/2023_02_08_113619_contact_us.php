@@ -13,16 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('contact_us', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('email');
-            $table->string('Phone Number');
-            $table->string('Type of problem');
-            $table->text('description');
-            $table->string('status');
-            $table->timestamps();
-        });
+         
     }
 
     /**

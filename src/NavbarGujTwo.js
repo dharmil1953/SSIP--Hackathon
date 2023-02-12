@@ -55,9 +55,9 @@ export default function NavbarGujTwo() {
           >
             <CustomLink to={"/Grievance"}>ફરિયાદ</CustomLink>
             <CustomLink to={"/watersupply"}>પાણી પુરવઠા</CustomLink>
-            <CustomLink to={"/education"}>શિક્ષણ</CustomLink>
-            <CustomLink to={"/election"}>ચૂંટણી</CustomLink>
-            <CustomLink to={"/important dates"}>મહત્વપૂર્ણ તારીખો</CustomLink>
+            <CustomLink to={"/education"}>ગામડાની વાર્તાઓ</CustomLink>
+            {/* <CustomLink to={"/election"}>ચૂંટણી</CustomLink> */}
+            {/* <CustomLink to={"/important dates"}>મહત્વપૂર્ણ તારીખો</CustomLink> */}
           </ul>
         </div>
       </nav>
